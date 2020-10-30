@@ -7,6 +7,21 @@ public class Person {
     private ArrayList<Person> friends;
     private ArrayList<Occasion> occasions;
 
+    public Person(){
+        this.name = null;
+        this.password = null;
+        this.friends = null;
+        this.occasions = null;
+    }
+
+    public Person(String name, String password){
+        this.name = name;
+        this.password = password;
+        this.friends = new ArrayList<Person>();
+        this.occasions = new ArrayList<Occasion>();
+    }
+
+
     public String getName()                  {return this.name;}
     public String getPassword()              {return this.password;}
     public ArrayList<Person> getFriends()    {return this.friends;}
