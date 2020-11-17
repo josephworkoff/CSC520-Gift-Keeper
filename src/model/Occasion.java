@@ -25,10 +25,11 @@ public class Occasion {
     	this.month          = month;
         this.day            = day;
         this.hour 			= hour;
-        this.minute 		= hour;
+        this.minute 		= minute;
         
     	this.alertMonth     = alertMonth;
         this.alertDay       = alertDay;
+        this.alertHour      = alertHour;
         this.alertMinute    = alertMinute;
         
         this.gifts          = new ArrayList<Gift>();        
@@ -82,12 +83,14 @@ public class Occasion {
     	
         if ( !(this.gifts.contains(gift) ) ){
             this.gifts.add(gift);
+            gift.setOccasion(this);
         }
     }
 
     public void removeGift(Gift gift){
         if ( this.gifts.contains(gift) ){
             this.gifts.remove(gift);
+            gift.setOccasion(null);
         }
     }
 

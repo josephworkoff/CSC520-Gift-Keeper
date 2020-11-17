@@ -3,11 +3,17 @@ package main;
 import ui.*;
 import model.*;
 
+import javax.swing.*;
 
 
 public class Main {
 	
-	//Main entrypoint to app
+	
+	public static final int WINDOW_HEIGHT = 400;
+	public static final int WINDOW_WIDTH = 600;
+	
+	
+
 	public static void main(String[] args) {
 
 		Person user = new Person("TestUser", "pass123");
@@ -36,9 +42,17 @@ public class Main {
 			user.addFriend(friend);
 		}
 
-
-		main.mainMenu(user);
 		
+		
+		JFrame mainFrame = new mainFrame(user); 
+		
+		mainFrame.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+		mainFrame.setLocationRelativeTo(null);
+		mainFrame.setResizable(false);
+		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainFrame.setVisible(true);
+        
+		//ui.mainFrame.mainMenu(user);
 		
 	}
 

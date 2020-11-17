@@ -40,13 +40,18 @@ public class Person {
     public void setPassword(String password) {this.password = password;}
 
     public void addFriend(Friend friend) {
-        if (!this.friends.contains(friend))
-            this.friends.add(friend);
+        if (!this.friends.contains(friend)) {
+        	this.friends.add(friend);
+        	friend.setPerson(this);
+        }
+       
     }
 
     public void removeFriend(Friend friend) {
-        if (this.friends != null && this.friends.contains(friend))
-            this.friends.remove(friend);
+        if (this.friends != null && this.friends.contains(friend)) {
+        	this.friends.remove(friend);
+        	friend.setPerson(null);
+        }
     }
 
     public void login(){

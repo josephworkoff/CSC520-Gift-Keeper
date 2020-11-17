@@ -34,10 +34,12 @@ public class Friend {
     
     public void addOccasion(Occasion occasion){
         this.occasions.add(occasion);
+        occasion.setFriend(this);
     }
 
     public void removeOccasion(Occasion occasion){
         this.occasions.remove(occasion);
+        occasion.setFriend(null);
     }
 
 

@@ -35,4 +35,16 @@ public class util {
 		
 	}
 	
+	public static int castStringToInt(String str) {
+		int num;
+		try {
+			num = Integer.parseInt(str);
+			return num;
+		}
+		catch (NumberFormatException e){
+			return -999;
+			
+		}
+	}
+	
 }
